@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniSocial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MiniSocial</div>
+    <nav>
+      <button class="nav-btn active" data-page="home">Home</button>
+      <button class="nav-btn" data-page="profile">My Profile</button>
+      <button class="nav-btn" data-page="people">People</button>
+      <button id="logoutBtn" class="nav-btn danger">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div id="message"></div>
+
+    <section id="loginPage" class="auth-card">
+      <h1>Welcome back 👋</h1>
+      <p class="muted">Login to your mini social network.</p>
+      <form id="loginForm">
+        <input id="loginEmail" type="email" placeholder="Email" required>
+        <input id="loginPassword" type="password" placeholder="Password" required>
+        <button class="primary" type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="showRegister">Create one</a></p>
+    </section>
+
+    <section id="registerPage" class="auth-card hidden">
+      <h1>Create account 🚀</h1>
+      <form id="registerForm">
+        <input id="regUsername" placeholder="Username" required>
+        <input id="regEmail" type="email" placeholder="Email" required>
+        <input id="regPassword" type="password" placeholder="Password (6+ characters)" required>
+        <button class="primary" type="submit">Register</button>
+      </form>
+      <p>Already registered? <a href="#" id="showLogin">Login</a></p>
+    </section>
+
+    <div id="app" class="hidden">
+      <section id="homePage">
+        <div class="create-card card">
+          <h2>What's on your mind?</h2>
+          <textarea id="postContent" maxlength="500" placeholder="Share something..."></textarea>
+          <div class="row between">
+            <span class="muted"><span id="charCount">0</span>/500</span>
+            <button id="postBtn" class="primary">Post</button>
+          </div>
+        </div>
+        <div id="feed"></div>
+      </section>
+
+      <section id="profilePage" class="hidden">
+        <div id="myProfile"></div>
+      </section>
+
+      <section id="peoplePage" class="hidden">
+        <div class="card">
+          <h2>Discover people</h2>
+          <div id="people"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
